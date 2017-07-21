@@ -7,14 +7,9 @@ class Page < ApplicationRecord
 
   validates_presence_of :quote, :thank_you, :lesson_learned
 
-  accepts_nested_attributes_for :entries, reject_if: proc { |att| att['content'].blank?}
+  accepts_nested_attributes_for :entries, reject_if: proc { |att| att['content'].blank? }
   
-  
-  def tasks_attributes=(tasks_attributes)
-    tasks_attributes.values.each do |attribute|
-      self.tasks.build(attribute)
-    end
-  end
+  accepts_nested_attributes_for :tasks, refect_if: proc { |att| att['name'].blank? }
   
   def date
     self.created_at.strftime("%A, %B %d")
