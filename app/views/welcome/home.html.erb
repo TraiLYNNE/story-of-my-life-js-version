@@ -8,10 +8,12 @@
     
     <h2><%= Page.random_quote %></h2>
     
-    <ul>
-      <li><%= link_to("View Your Current Stories", books_path) %></li>
-      <li><%= link_to("Write a new story", new_book_path) %></li>
-    </ul>
+    <div id='new-book-form'>
+      <%= link_to("Write a new story", new_book_path) %>
+    </div>
+    
+    <div id='bookshelf'><%= link_to("View Your Current Stories", books_path) %></div>
+    
   <% else %>
     <h1>Welcome</h1>
     
