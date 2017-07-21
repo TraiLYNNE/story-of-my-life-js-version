@@ -4,7 +4,12 @@
 
 $(function(){
     $('#bookshelf .link').on('click', function(){
-        alert('I clicked the link');
+        $.ajax({
+            method: 'GET',
+            url: '/books'
+        }).done(function(data){
+            console.log(data);
+        });
     });
 });
 
