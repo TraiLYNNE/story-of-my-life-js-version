@@ -8,6 +8,7 @@ $(function(){
             method: 'GET',
             url: '/books'
         }).done(function(data){
+            $('#bookshelf').append(data);
             console.log(data);
         });
     });
