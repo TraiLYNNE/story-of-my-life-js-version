@@ -4,6 +4,8 @@ class BooksController < ApplicationController
 
   def index
     @books = current_user.books
+    
+    render layout: false
   end
 
   def show
