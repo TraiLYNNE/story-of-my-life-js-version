@@ -3,15 +3,11 @@
 // You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(function(){
-    $('#bookshelf .link').on('click', function(){
-        $.ajax({
-            method: 'GET',
-            url: '/books'
-        }).done(function(data){
-            $('#bookshelf').append(data);
-            console.log(data);
+    $('#bookshelf .link').on('click', function(e) {
+        $.get(this.href).success(function(resp){
+            console.log(resp);
+            $('#bookshelf').html(resp);
         });
+        e.preventDefault();
     });
 });
-
-
