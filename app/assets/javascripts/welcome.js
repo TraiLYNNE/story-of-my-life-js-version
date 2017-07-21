@@ -5,7 +5,6 @@
 $(function(){
     $('#bookshelf .link').on('click', function(e) {
         $.get(this.href).success(function(resp){
-            console.log(resp);
             $('#bookshelf').html(resp);
         });
         e.preventDefault();
