@@ -12,7 +12,9 @@
       <%= link_to("Write a new story", new_book_path) %>
     </div>
     
-    <div id='bookshelf'><%= link_to("View Your Current Stories", books_path) %></div>
+    <div id='bookshelf'>
+      <a href='#' class='link'>View Current Books</a>
+    </div>
     
   <% else %>
     <h1>Welcome</h1>
