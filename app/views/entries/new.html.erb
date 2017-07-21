@@ -1,0 +1,33 @@
+<h2>What's on Your Mind</h2>
+
+<%= form_for(@entry) do |f| %>
+  <% if @entry.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@entry.errors.count, "error") %> prohibited the creation of this Important Date:
+      </h2>
+
+      <ul>
+        <% @entry.errors.full_messages.each do |m| %>
+          <li><%= m %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :page_id %>
+
+  <div class="field">
+    <%= f.label :mood %>
+    <%= f.text_field :mood %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+
+  <div class="action">
+    <%= f.submit %>
+  </div>
+<% end %>

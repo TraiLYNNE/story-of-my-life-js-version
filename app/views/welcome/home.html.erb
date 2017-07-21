@@ -1,0 +1,24 @@
+<div class="message">
+  <% if !!current_user %>
+    <% if Time.now.hour < 12 %>
+      <h1> Good Morning, <%= current_user.name %></h1>
+    <% else %>
+      <h1>Good Afternoon, <%= current_user.name %></h1>
+    <% end %>
+    
+    <h2><%= Page.random_quote %></h2>
+    
+    <ul>
+      <li><%= link_to("View Your Current Stories", books_path) %></li>
+      <li><%= link_to("Write a new story", new_book_path) %></li>
+    </ul>
+  <% else %>
+    <h1>Welcome</h1>
+    
+    <div>
+      <h2>When Writing The Story Of Your Life,</h2>
+      <h2>Don't Let Anyone Else Hold The Pen</h2>
+      <h4>~Unknown</h4>
+  </div>
+  <% end %>
+</div>

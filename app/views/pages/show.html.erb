@@ -1,0 +1,40 @@
+<p><%= link_to("Back to Chapter", chapter_path(@page.chapter)) %></p>
+<p><%= link_to("Edit Page", edit_page_path(@page)) %></p>
+
+<h3>Page <%= @page.page_number %> - <%= @page.date %></h3>
+
+<div>
+  <p><%= @page.quote %></p>
+</div>
+
+<div>
+  <h3>Thank you for...</h3>
+  <p><%= @page.thank_you %></p>
+</div>
+
+<div>
+  <h2>Today's Lesson:</h2>
+  <p><%= @page.lesson_learned %>
+</div>
+
+<div>
+  <h2>Tasks:</h2>
+  <%= link_to("Add Task", new_page_task_path(@page)) %>
+  <% @page.tasks.each do |t| %>
+    <p>
+      <%= link_to "x", t, method: :delete %>
+      <%= t.name %>
+    </p>
+  <% end %>
+</div>
+
+<div>
+  <h2>Entries:</h2>
+
+  <%= link_to("Add Entry", new_page_entry_path(@page)) %>
+
+  <ul>
+    <% @page.entries.each do |e| %>
+      <li><%= link_to(e.time, entry_path(e)) %>
+    <% end %>
+</div>

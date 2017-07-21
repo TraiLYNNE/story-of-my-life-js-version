@@ -1,0 +1,46 @@
+<%= form_for(@chapter) do |f| %>
+
+  <% if @chapter.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@chapter.errors.count, "error") %> prohibited the creation of this chapter:
+      </h2>
+
+      <ul>
+        <% @chapter.errors.full_messages.each do |m| %>
+          <li><%= m %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :book_id %>
+
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :main_focus %>
+    <%= f.text_field :main_focus %>
+  </div>
+
+  <p>Add Important Dates</p>
+  <%= f.fields_for :important_dates do |date| %>
+    <div>
+      <div>
+        <%= date.label :date %>
+        <%= date.date_select :date %>
+
+        <%= date.label :title %>
+        <%= date.text_field :title %>
+      </div>
+    </div>
+
+  <% end %>
+
+  <div class="action">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,7 @@
+<h2>Edit Book</h2>
+
+<%= render 'form' %>
+
+<%= form_tag book_path(@book), method: :delete do %>
+  <%= submit_tag "Delete Book" %>
+<% end %>

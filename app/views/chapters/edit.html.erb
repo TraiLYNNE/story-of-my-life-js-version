@@ -1,0 +1,7 @@
+<h2>Edit Chapter</h2>
+
+<%= render 'form' %>
+
+<%= form_tag chapter_path(@chapter), method: :delete do %>
+  <%= submit_tag "Delete Chapter" %>
+<% end %>

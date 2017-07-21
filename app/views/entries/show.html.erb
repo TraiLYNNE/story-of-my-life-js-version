@@ -1,0 +1,12 @@
+<%= link_to("Back to Page", page_path(@entry.page)) %>
+
+<h4>Time: <%= @entry.time %></h4>
+<h4>Mood: <%= @entry.mood %></h4>
+
+<h2>Content:</h2>
+<p><%= @entry.content %></p>
+
+
+<%= form_tag entry_path(@entry), method: :delete do %>
+  <%= submit_tag "Delete Entry" %>
+<% end %>

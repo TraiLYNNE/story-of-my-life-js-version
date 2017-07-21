@@ -1,0 +1,7 @@
+<h2>Edit Page</h2>
+
+<%= render 'form' %>
+
+<%= form_tag page_path(@page), method: :delete do %>
+  <%= submit_tag "Delete Page" %>
+<% end %>
