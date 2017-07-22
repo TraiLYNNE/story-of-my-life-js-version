@@ -6,7 +6,8 @@ $(function () {
 		var entry = $.post('/entries', values);
 			
 		entry.done(function(resp) {
-			console.log(resp);
+			$('#entryMood').text(resp["mood"]);
+			$('#entryContent').text(resp["content"]);
 		});
 	});
 });
