@@ -1,4 +1,4 @@
-<%= link_to("Back to Page", page_path(@entry.page)) %>
+<p><strong>Page <%= link_to(@entry.page.page_number, page_path(@entry.page)) %></strong></p>
 
 <h4>Time: <%= @entry.time %></h4>
 <h4>Mood: <%= @entry.mood %></h4>
