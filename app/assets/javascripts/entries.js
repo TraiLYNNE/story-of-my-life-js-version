@@ -11,10 +11,15 @@ $(function () {
 		});
 	});
 	
-	$('.js-more').on("click", function() {
-		var nextId = parseInt($('.js-next').attr('data-id')) + 1;
+	$(".js-next").on("click", function() {
+		var nextId = parseInt($(".js-next").attr("data-id")) + 1;
 		$.get("/entries/" + nextId + ".json", function(resp) {
-			// body...
+			$(".entryTime").text(resp["time"]);
+			$(".entryMood").text(resp["mood"]);
+			$(".entryContent").text(resp["content"]);
+			
+			$(".js-next").attr("data-id", resp["id"]);
 		});
+
 	});
 });
