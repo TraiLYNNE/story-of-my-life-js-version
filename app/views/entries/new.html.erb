@@ -33,18 +33,3 @@
 <% end %>
 
 
-<script type="text/javascript" charset="utf-8">
-  $(function(){
-    $('form').submit(function(e) {
-        e.preventDefault();
-        
-        var values = $(this).serialize();
-        
-        var entry = $.post('/entries', values);
-        
-        entry.done(function(resp) {
-            console.log(resp)
-        });
-    });
-  })
-</script>
