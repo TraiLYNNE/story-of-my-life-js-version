@@ -11,7 +11,9 @@
 
 
 <h2>Important Dates</h2>
-  <%= link_to("Add Date", new_chapter_important_date_path(@chapter)) %>
+  <div id= 'add-date'>
+    <%= link_to("Add Date", new_chapter_important_date_path(@chapter)) %>
+  </div>
 
   <% @chapter.important_dates.order(:date).each do |date| %>
     <p><%= date.date.strftime("%A, %B %d") %> - <%= link_to(date.title, edit_important_date_path(date)) %></p>
@@ -22,6 +24,6 @@
 
   <ul>
     <% @chapter.pages.each do |page| %>
-      <li><%= link_to(page.page_number, page_path(page)) %></li>
+      <li>Page <%= link_to(page.page_number, page_path(page)) %> - <%= page.date %></li>
     <% end %>
   </ul>
