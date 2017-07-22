@@ -42,8 +42,8 @@
         
         var entry = $.post('/entries', values);
         
-        entry.done(function(data) {
-            alert('new post created');
+        entry.done(function(resp) {
+            console.log(resp)
         });
     });
   })
