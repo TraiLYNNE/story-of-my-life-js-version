@@ -1,3 +1,6 @@
+<a href="#" class="js-prev" data-id="<%=@entry.id%>">Prev</a>
+<a href="#" class="js-next" data-id="<%=@entry.id%>">Next</a>
+
 <p><strong>Page <%= link_to(@entry.page.page_number, page_path(@entry.page)) %></strong></p>
 
 <h4>Time: <%= @entry.time %></h4>
