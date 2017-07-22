@@ -15,7 +15,7 @@ class EntriesController < ApplicationController
     if @entry.valid?
       @entry.save
 
-      redirect_to entry_path(@entry), alert: "Entry successfully created"
+      render json: @entry, status: 201
     else
       render :new
     end
