@@ -1,15 +1,22 @@
-<h1><%= @book.title %></h1>
-<h4>By: <%= @book.author %></h4>
+<div id='book-info'>
+  <h1><%= @book.title %></h1>
+  <h4>By: <%= @book.author %></h4>
 
-<p><%= @book.quote %></p>
+  <div id="quote">
+    <p><%= @book.quote %></p>
+  </div>
 
-<%= link_to("Edit Story", edit_book_path(@book)) %>
+  <%= link_to("Edit Story", edit_book_path(@book)) %>
+</div>
 
-<h2>Index</h2>
-<%= link_to("Add Chapter", new_book_chapter_path(@book)) %>
+<div id='toc'>
+  <h2>Table of Contents</h2>
+  <%= link_to("Add Chapter", new_book_chapter_path(@book)) %>
+  
+  <ul>
+    <% @book.chapters.each do |chap| %>
+      <li><%= link_to(chap.title, chapter_path(chap)) %></li>
+    <% end %>
+  </ul>
+</div>
 
-<ul>
-  <% @book.chapters.each do |chap| %>
-    <li><%= link_to(chap.title, chapter_path(chap)) %></li>
-  <% end %>
-</ul>
