@@ -31,3 +31,20 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+
+<script type="text/javascript" charset="utf-8">
+  $(function(){
+    $('form').submit(function(e) {
+        e.preventDefault();
+        
+        var values = $(this).serialize();
+        
+        var entry = $.post('/entries', values);
+        
+        entry.done(function(data) {
+            alert('new post created');
+        });
+    });
+  })
+</script>
