@@ -5,7 +5,10 @@ class BooksController < ApplicationController
   def index
     @books = current_user.books
     
-    render layout: false
+    respond_to do |f|
+      f.html { render :index, layout: false }
+      f.json {render json: @books }
+    end
   end
 
   def show
