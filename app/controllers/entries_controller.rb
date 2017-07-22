@@ -3,6 +3,10 @@ class EntriesController < ApplicationController
   before_action :set_entry, only: [:show, :destroy]
 
   def show
+    respond_to do |f|
+      f.html { render :show }
+      f.json { render json: @entry }
+    end
   end
   
   def new
