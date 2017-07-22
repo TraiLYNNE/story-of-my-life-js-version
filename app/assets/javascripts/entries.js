@@ -22,4 +22,16 @@ $(function () {
 		});
 
 	});
+	
+	$(".js-prev").on("click", function() {
+		var lastId = parseInt($(".js-prev").attr("data-id")) - 1;
+		$.get("/entries/" + lastId + ".json", function(resp) {
+			$(".entryTime").text(resp["time"]);
+			$(".entryMood").text(resp["mood"]);
+			$(".entryContent").text(resp["content"]);
+			
+			$(".js-prev").attr("data-id", resp["id"]);
+		});
+
+	});
 });
