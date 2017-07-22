@@ -1,4 +1,4 @@
-<%= link_to("Back to Book", book_path(@chapter.book)) %>
+<h4>Book <%= link_to(@chapter.book.title, book_path(@chapter.book)) %></h4>
 
 <h1><%= @chapter.title %></h1>
 
