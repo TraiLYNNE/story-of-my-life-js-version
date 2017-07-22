@@ -3,8 +3,9 @@
 
 <p><strong>Page <%= link_to(@entry.page.page_number, page_path(@entry.page)) %></strong></p>
 
-<h4>Time: <%= @entry.time %></h4>
-<h4>Mood: <%= @entry.mood %></h4>
+<h4 class='entryTime'>Time: <%= @entry.time %></h4>
+
+<h4 class='entryMood'>Mood: <%= @entry.mood %></h4>
 
 <h2>Content:</h2>
-<p><%= @entry.content %></p>
+<p class='entryContent'><%= @entry.content %></p>
