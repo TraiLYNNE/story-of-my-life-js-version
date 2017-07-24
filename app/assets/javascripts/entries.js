@@ -1,6 +1,6 @@
 $(function () {
-	$('form').submit(function(event) {
-		event.preventDefault();
+	$('form').submit(function(e) {
+		e.preventDefault();
 			
 		var values = $(this).serialize();
 		var entry = $.post('/entries', values);
