@@ -5,8 +5,7 @@
 $(function(){
     $('#bookshelf .link').on('click', function(e) {
         e.preventDefault();
-        $.get(this.href).success(function(resp){
-            $('#bookshelf').html(resp);
-        });
+        
+        $('#bookshelf').load('/books')
     });
 });
