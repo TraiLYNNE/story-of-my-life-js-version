@@ -6,6 +6,7 @@ $(function () {
 		var entry = $.post('/entries', values);
 			
 		entry.done(function(resp) {
+			$('#entryTime').text(resp["time"]);
 			$('#entryMood').text(resp["mood"]);
 			$('#entryContent').text(resp["content"]);
 		});
