@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_entry, only: [:show, :destroy]
+  before_action :set_entry, only: [:show, :destroy, :next]
   
   def index
     @entries = Page.find(params[:page_id]).entries
@@ -32,6 +32,12 @@ class EntriesController < ApplicationController
     else
       render :new
     end
+  end
+  
+  def next
+    next_entry = @entry.next
+    
+    render json: next_entry
   end
   
   def destroy
