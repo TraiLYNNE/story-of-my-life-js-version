@@ -28,6 +28,8 @@ Rails.application.routes.draw do
   resources :entries, only: [:create, :show, :destroy]
   
   get '/entries/:id/next', to: 'entries#next'
+  
+  get '/entries/:id/prev', to: 'entries#prev'
 
 
   # Regular Routes

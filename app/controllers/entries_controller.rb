@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_entry, only: [:show, :destroy, :next]
+  before_action :set_entry, only: [:show, :destroy, :next, :prev]
   
   def show
     respond_to do |f|
@@ -29,6 +29,12 @@ class EntriesController < ApplicationController
     next_entry = @entry.next
     
     render json: next_entry
+  end
+  
+  def prev
+    prev_entry = @entry.prev
+    
+    render json: prev_entry
   end
   
   def destroy
