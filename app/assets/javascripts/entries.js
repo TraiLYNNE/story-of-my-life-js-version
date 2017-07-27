@@ -1,8 +1,9 @@
 $(function () {
 	$('form').submit(function(e) {
 		e.preventDefault();
-			
+		
 		var values = $(this).serialize();
+		
 		var entry = $.post('/entries', values);
 			
 		entry.done(function(resp) {
