@@ -4,6 +4,11 @@ class EntriesController < ApplicationController
   
   def index
     @entries = Book.find(params[:page_id]).entries
+    
+    respond_to do |f|
+      f.html { render :index, layout: false }
+      f.json { render json: @entries }
+    end
   end
   
   def show
