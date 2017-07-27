@@ -31,13 +31,17 @@
 
 <div>
   <h2>Entries:</h2>
+  <div id='entry-nav'>
+    <p class='new'><%= link_to("Add Entry", new_page_entry_path(@page)) %></p>
+    <p class='all'><%= link_to("View Entries", page_entries_path(@page)) %></p>
+  </div>
 
-  <p><%= link_to("Add Entry", new_page_entry_path(@page)) %></p>
-  <p><%= link_to("View Entries", page_entries_path(@page)) %></p>
-
-  <ul>
-    <% @page.entries.each do |e| %>
-      <li><%= link_to(e.time, entry_path(e)) %> - <%= link_to "x", e, method: :delete %></li>
-    <% end %>
-  </ul>
+  <!--<ul>-->
+  <!--  <% @page.entries.each do |e| %>-->
+  <!--    <li><%= link_to(e.time, entry_path(e)) %> - <%= link_to "x", e, method: :delete %></li>-->
+  <!--  <% end %>-->
+  <!--</ul>-->
+  <div id='results'>
+    
+  </div>
 </div>
