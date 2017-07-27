@@ -1,7 +1,11 @@
 class EntriesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_entry, only: [:show, :destroy]
-
+  
+  def index
+    @entries = Book.find(params[:page_id]).entries
+  end
+  
   def show
     respond_to do |f|
       f.html { render :show }
