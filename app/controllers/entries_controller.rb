@@ -2,15 +2,6 @@ class EntriesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_entry, only: [:show, :destroy, :next]
   
-  def index
-    @entries = Page.find(params[:page_id]).entries
-    
-    respond_to do |f|
-      f.html { render :index, layout: false }
-      f.json { render json: @entries }
-    end
-  end
-  
   def show
     respond_to do |f|
       f.html { render :show }

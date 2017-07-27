@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   end
   
   resources :pages, except: [:index] do
-    resources :entries, only: [:new, :index]
+    resources :entries, only: [:new]
     resources :tasks, only: [:new]
   end
   
