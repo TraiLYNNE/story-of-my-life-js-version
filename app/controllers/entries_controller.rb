@@ -3,7 +3,7 @@ class EntriesController < ApplicationController
   before_action :set_entry, only: [:show, :destroy]
   
   def index
-    @entries = Book.find(params[:page_id]).entries
+    @entries = Page.find(params[:page_id]).entries
     
     respond_to do |f|
       f.html { render :index, layout: false }
